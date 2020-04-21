@@ -17,4 +17,13 @@ CHIP PC {
 
     PARTS:
     // Put your code here:
+
+    Inc16(in=atual, out=incremented);
+    Mux16(a=atual, b=incremented, sel=inc, out=incrementedOrNot);
+    Mux16(a=incrementedOrNot, b=in, sel=load, out=mightLoaded);
+    Mux16(a=mightLoaded, b=false, sel=reset, out=resetedOrNot);
+    Register(in=resetedOrNot, load=true, out=out, out=atual);
+
+    //lembrar que para o PC, a saida sempre se dara em t+1. Por isso o load do register nao
+    //é o load do PC
 }
