@@ -15,4 +15,6 @@ CHIP Bit {
 
     PARTS:
     // Put your code here:
+    Mux(a=guardado, b=in, sel=load, out=aux);
+    DFF(in=aux, out=out, out=guardado);
 }
