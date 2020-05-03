@@ -59,7 +59,9 @@ M=0
     
     //voltando A para apontar para os 16 pixels atuais para pinta-los
     A=D
-    // 0000000000000000 para 1111111111111111 (pintando de preto todos os 16 bits)
+    // 0000000000000000 para 1111111111111111 (pintando de preto todos os 16 pixels)
+    //ou
+    // 1111111111111111 para 0000000000000000 (limpando todos os 16 pixels)
     M=!M
 
     // atualizando @currentWord para os proximos 16 pixels a serem pintados
